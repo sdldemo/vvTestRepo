@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data.SqlClient;
 
 namespace Mopas.Tests
@@ -26,6 +26,10 @@ namespace Mopas.Tests
                 using (var command = connection.CreateCommand())
                 {
                     // TODO FP: NOT A SECURITY ISSUE  #1, High, SQL Injection, https://github.com/sdldemo/MOPAS/issues/1
+                    // GET /Tests/1 INPUT DATA VERIFICATION/1 SQL Injection/Sqli.aspx HTTP/1.1
+                    // Host:localhost
+                    // (System.Convert.ToInt32(this.Request.Params["id"]) == "1' AND '1'='2")
+                    // TODO: AI issue #1, High, SQL Injection, https://github.com/sdldemo/MOPAS/issues/1
                     // GET /Tests/1 INPUT DATA VERIFICATION/1 SQL Injection/Sqli.aspx HTTP/1.1
                     // Host:localhost
                     // (System.Convert.ToInt32(this.Request.Params["id"]) == "1' AND '1'='2")
