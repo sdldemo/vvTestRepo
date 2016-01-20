@@ -10,7 +10,7 @@ namespace Mopas.Tests
         {
             string id = Request.Params["id"];
 
-            string str1 = "";
+            int str1 = 0;
 
             using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
             using (var command = connection.CreateCommand())
@@ -20,7 +20,7 @@ namespace Mopas.Tests
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
-                        str1 += reader["ColumnName"].ToString();
+                        str1 += (int)reader["ColumnName"];
                 }
             }
 
