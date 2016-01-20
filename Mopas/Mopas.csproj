@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion></ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8042C8E0-F0FD-4E05-AD8A-94BB6AF46EF4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mopas</RootNamespace>
+    <AssemblyName>Mopas</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.DirectoryServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="Tests\2 SECURITY FUNCTIONS\14 Information Exposure Through Comments\CommentsExposure.aspx" />
+    <Content Include="Tests\2 SECURITY FUNCTIONS\1 Missing Authentication For Critical Functions\CriticalFunctionAuth.aspx" />
+    <Content Include="Tests\1 INPUT DATA VERIFICATION\10 Cross-site request forgery\Csrf.aspx" />
+    <Content Include="Tests\1 INPUT DATA VERIFICATION\5 Unrestricted Upload of file with Dangerous Type\DangerFileUpload.aspx" />
+    <Content Include="Tests\6 CODE ERROR\2 Leftover Debug Code\DebugCode.aspx" />
+    <Content Include="Tests\7 API ABUSE\1 Reliance on DNS Lookups in a Security Decision\DnsLookup.aspx" />
+    <Content Include="Tests\2 SECURITY FUNCTIONS\16 Download of Code Without Integrity Check\DownloadCode.aspx" />
+    <Content Include="Tests\4 ERROR PROCESSING\1 Information Exposure Through an Error Message\ErrorMessage.aspx" />
+    <Content Include="Tests\6 CODE ERROR\3 Exposure of System Data to an Unauthorized Control Sphere\ExposureSystemData.aspx" />
+    <Content Include="Tests\2 SECURITY FUNCTIONS\10 Use of Hard-coded Cryptographic Key\HardcodedKey.aspx" />
+    <Content Include="Tests\2 SECURITY FUNCTIONS\6 Use of Hard-coded Password\HardcodedPassword.aspx" />
+    <Content Include="Tests\2 SECURITY FUNCTIONS\2 Improper Authorization\ImproperAuth.aspx" />
+    <Content Include="Tests\4 ERROR PROCESSING\3 Improper Check for Unusual or Exceptional Conditions\ImproperExceptionCheck.aspx" />
+    <Content Include="Tests\5 CODE ERROR\2 Improper Resource Shutdown or Release\ImproperResourceShutdown.aspx" />
+    <Content Include="Tests\2 SECURITY FUNCTIONS\3 Incorrect Permission Assignment For Critical Resource\IncorrectPermissions.aspx" />
+    <Content Include="Tests\2 SECURITY FUNCTIONS\7 Cryptographic Issues %28Insufficient Encryption Key Length%29\InsufficientKey.aspx" />
+    <Content Include="Tests\2 SECURITY FUNCTIONS\8 Use of Insufficiently Random Values\InsufficientRandom.aspx" />
+    <Content Include="Tests\1 INPUT DATA VERIFICATION\13 Integer Overflow\IntegerOverflow.aspx" />
+    <Content Include="Tests\1 INPUT DATA VERIFICATION\9 LDAP Injection\Ldap.aspx" />
+    <Content Include="Tests\2 SECURITY FUNCTIONS\5 Missing Encryption of Sensitive Data\MissingEncryption.aspx" />
+    <Content Include="Tests\4 ERROR PROCESSING\2 Detection of Error Condition Without Action\NoActionError.aspx" />
+    <Content Include="Tests\5 CODE ERROR\1 NULL Pointer Dereference\NullDereference.aspx" />
+    <Content Include="Tests\2 SECURITY FUNCTIONS\15 Use of a One-Way Hash without a Salt\OneWayHash.aspx" />
+    <Content Include="Tests\1 INPUT DATA VERIFICATION\6 URL Redirection to Untrusted Site\OpenRedirect.aspx" />
+    <Content Include="Tests\2 SECURITY FUNCTIONS\9 Plaintext Storage of a Password\PasswordStorage.aspx" />
+    <Content Include="Tests\1 INPUT DATA VERIFICATION\11 Path Traversal\PathTraversal.aspx" />
+    <Content Include="Tests\2 SECURITY FUNCTIONS\12 Information Exposure Through Persistent Cookies\PersistentCookie.aspx" />
+    <Content Include="Tests\6 CODE ERROR\4 Private Array-Typed Field Returned From A Public Method\PrivateDataReturn.aspx" />
+    <Content Include="Tests\6 CODE ERROR\5 Public Data Assigned to Private Array-Typed Field\PrivateDataSet.aspx" />
+    <Content Include="Tests\3 TIME AND STATUS\2 Uncontrolled Recursion\Recursion.aspx" />
+    <Content Include="Tests\1 INPUT DATA VERIFICATION\2 Resource Injection\ResourceInjection.aspx" />
+    <Content Include="Tests\1 INPUT DATA VERIFICATION\12 HTTP response splitting\ResponseSplitting.aspx" />
+    <Content Include="Tests\2 SECURITY FUNCTIONS\4 Use of a Broken or Risky Cryptographic Algorithm\RiskyCryptographic.aspx" />
+    <Content Include="Tests\2 SECURITY FUNCTIONS\13 Sensitive Cookie in HTTPS Session Without Secure Attribute\SecureCookie.aspx" />
+    <Content Include="Tests\1 INPUT DATA VERIFICATION\14 Reliance on Untrusted Inputs in a Security Decisions\SecurityUntrustedInput.aspx" />
+    <Content Include="Tests\1 INPUT DATA VERIFICATION\1 SQL Injection\Sqli.aspx" />
+    <Content Include="Tests\1 INPUT DATA VERIFICATION\4 OS Command Injection\OsCommand.aspx" />
+    <Content Include="Tests\3 TIME AND STATUS\1 Time-of-check  Time-of-use %28TOCTOU%29 Race Condition\Tocttou.aspx" />
+    <Content Include="Tests\2 SECURITY FUNCTIONS\11 Weak Password Requirements\WeakPassword.aspx" />
+    <Content Include="Tests\6 CODE ERROR\1 Exposure of Data Element to Wrong Session\WrongSession.aspx" />
+    <Content Include="Tests\1 INPUT DATA VERIFICATION\8 XPath Injection\XPath.aspx" />
+    <Content Include="Tests\1 INPUT DATA VERIFICATION\7 XQuery Injection\XQuery.aspx" />
+    <Content Include="Tests\1 INPUT DATA VERIFICATION\3 Cross-site Scripting\Xss.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\14 Information Exposure Through Comments\CommentsExposure.aspx.cs">
+      <DependentUpon>CommentsExposure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\14 Information Exposure Through Comments\CommentsExposure.aspx.designer.cs">
+      <DependentUpon>CommentsExposure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\1 Missing Authentication For Critical Functions\CriticalFunctionAuth.aspx.cs">
+      <DependentUpon>CriticalFunctionAuth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\1 Missing Authentication For Critical Functions\CriticalFunctionAuth.aspx.designer.cs">
+      <DependentUpon>CriticalFunctionAuth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\10 Cross-site request forgery\Csrf.aspx.cs">
+      <DependentUpon>Csrf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\10 Cross-site request forgery\Csrf.aspx.designer.cs">
+      <DependentUpon>Csrf.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\5 Unrestricted Upload of file with Dangerous Type\DangerFileUpload.aspx.cs">
+      <DependentUpon>DangerFileUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\5 Unrestricted Upload of file with Dangerous Type\DangerFileUpload.aspx.designer.cs">
+      <DependentUpon>DangerFileUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\6 CODE ERROR\2 Leftover Debug Code\DebugCode.aspx.cs">
+      <DependentUpon>DebugCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\6 CODE ERROR\2 Leftover Debug Code\DebugCode.aspx.designer.cs">
+      <DependentUpon>DebugCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\7 API ABUSE\1 Reliance on DNS Lookups in a Security Decision\DnsLookup.aspx.cs">
+      <DependentUpon>DnsLookup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\7 API ABUSE\1 Reliance on DNS Lookups in a Security Decision\DnsLookup.aspx.designer.cs">
+      <DependentUpon>DnsLookup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\16 Download of Code Without Integrity Check\DownloadCode.aspx.cs">
+      <DependentUpon>DownloadCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\16 Download of Code Without Integrity Check\DownloadCode.aspx.designer.cs">
+      <DependentUpon>DownloadCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\4 ERROR PROCESSING\1 Information Exposure Through an Error Message\ErrorMessage.aspx.cs">
+      <DependentUpon>ErrorMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\4 ERROR PROCESSING\1 Information Exposure Through an Error Message\ErrorMessage.aspx.designer.cs">
+      <DependentUpon>ErrorMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\6 CODE ERROR\3 Exposure of System Data to an Unauthorized Control Sphere\ExposureSystemData.aspx.cs">
+      <DependentUpon>ExposureSystemData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\6 CODE ERROR\3 Exposure of System Data to an Unauthorized Control Sphere\ExposureSystemData.aspx.designer.cs">
+      <DependentUpon>ExposureSystemData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\10 Use of Hard-coded Cryptographic Key\HardcodedKey.aspx.cs">
+      <DependentUpon>HardcodedKey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\10 Use of Hard-coded Cryptographic Key\HardcodedKey.aspx.designer.cs">
+      <DependentUpon>HardcodedKey.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\6 Use of Hard-coded Password\HardcodedPassword.aspx.cs">
+      <DependentUpon>HardcodedPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\6 Use of Hard-coded Password\HardcodedPassword.aspx.designer.cs">
+      <DependentUpon>HardcodedPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\2 Improper Authorization\ImproperAuth.aspx.cs">
+      <DependentUpon>ImproperAuth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\2 Improper Authorization\ImproperAuth.aspx.designer.cs">
+      <DependentUpon>ImproperAuth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\4 ERROR PROCESSING\3 Improper Check for Unusual or Exceptional Conditions\ImproperExceptionCheck.aspx.cs">
+      <DependentUpon>ImproperExceptionCheck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\4 ERROR PROCESSING\3 Improper Check for Unusual or Exceptional Conditions\ImproperExceptionCheck.aspx.designer.cs">
+      <DependentUpon>ImproperExceptionCheck.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\5 CODE ERROR\2 Improper Resource Shutdown or Release\ImproperResourceShutdown.aspx.cs">
+      <DependentUpon>ImproperResourceShutdown.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\5 CODE ERROR\2 Improper Resource Shutdown or Release\ImproperResourceShutdown.aspx.designer.cs">
+      <DependentUpon>ImproperResourceShutdown.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\3 Incorrect Permission Assignment For Critical Resource\IncorrectPermissions.aspx.cs">
+      <DependentUpon>IncorrectPermissions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\3 Incorrect Permission Assignment For Critical Resource\IncorrectPermissions.aspx.designer.cs">
+      <DependentUpon>IncorrectPermissions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\7 Cryptographic Issues %28Insufficient Encryption Key Length%29\InsufficientKey.aspx.cs">
+      <DependentUpon>InsufficientKey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\7 Cryptographic Issues %28Insufficient Encryption Key Length%29\InsufficientKey.aspx.designer.cs">
+      <DependentUpon>InsufficientKey.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\8 Use of Insufficiently Random Values\InsufficientRandom.aspx.cs">
+      <DependentUpon>InsufficientRandom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\8 Use of Insufficiently Random Values\InsufficientRandom.aspx.designer.cs">
+      <DependentUpon>InsufficientRandom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\13 Integer Overflow\IntegerOverflow.aspx.cs">
+      <DependentUpon>IntegerOverflow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\13 Integer Overflow\IntegerOverflow.aspx.designer.cs">
+      <DependentUpon>IntegerOverflow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\9 LDAP Injection\Ldap.aspx.cs">
+      <DependentUpon>Ldap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\9 LDAP Injection\Ldap.aspx.designer.cs">
+      <DependentUpon>Ldap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\5 Missing Encryption of Sensitive Data\MissingEncryption.aspx.cs">
+      <DependentUpon>MissingEncryption.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\5 Missing Encryption of Sensitive Data\MissingEncryption.aspx.designer.cs">
+      <DependentUpon>MissingEncryption.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\4 ERROR PROCESSING\2 Detection of Error Condition Without Action\NoActionError.aspx.cs">
+      <DependentUpon>NoActionError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\4 ERROR PROCESSING\2 Detection of Error Condition Without Action\NoActionError.aspx.designer.cs">
+      <DependentUpon>NoActionError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\5 CODE ERROR\1 NULL Pointer Dereference\NullDereference.aspx.cs">
+      <DependentUpon>NullDereference.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\5 CODE ERROR\1 NULL Pointer Dereference\NullDereference.aspx.designer.cs">
+      <DependentUpon>NullDereference.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\15 Use of a One-Way Hash without a Salt\OneWayHash.aspx.cs">
+      <DependentUpon>OneWayHash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\15 Use of a One-Way Hash without a Salt\OneWayHash.aspx.designer.cs">
+      <DependentUpon>OneWayHash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\6 URL Redirection to Untrusted Site\OpenRedirect.aspx.cs">
+      <DependentUpon>OpenRedirect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\6 URL Redirection to Untrusted Site\OpenRedirect.aspx.designer.cs">
+      <DependentUpon>OpenRedirect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\9 Plaintext Storage of a Password\PasswordStorage.aspx.cs">
+      <DependentUpon>PasswordStorage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\9 Plaintext Storage of a Password\PasswordStorage.aspx.designer.cs">
+      <DependentUpon>PasswordStorage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\11 Path Traversal\PathTraversal.aspx.cs">
+      <DependentUpon>PathTraversal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\11 Path Traversal\PathTraversal.aspx.designer.cs">
+      <DependentUpon>PathTraversal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\12 Information Exposure Through Persistent Cookies\PersistentCookie.aspx.cs">
+      <DependentUpon>PersistentCookie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\12 Information Exposure Through Persistent Cookies\PersistentCookie.aspx.designer.cs">
+      <DependentUpon>PersistentCookie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\6 CODE ERROR\4 Private Array-Typed Field Returned From A Public Method\PrivateDataReturn.aspx.cs">
+      <DependentUpon>PrivateDataReturn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\6 CODE ERROR\4 Private Array-Typed Field Returned From A Public Method\PrivateDataReturn.aspx.designer.cs">
+      <DependentUpon>PrivateDataReturn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\6 CODE ERROR\5 Public Data Assigned to Private Array-Typed Field\PrivateDataSet.aspx.cs">
+      <DependentUpon>PrivateDataSet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\6 CODE ERROR\5 Public Data Assigned to Private Array-Typed Field\PrivateDataSet.aspx.designer.cs">
+      <DependentUpon>PrivateDataSet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\3 TIME AND STATUS\2 Uncontrolled Recursion\Recursion.aspx.cs">
+      <DependentUpon>Recursion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\3 TIME AND STATUS\2 Uncontrolled Recursion\Recursion.aspx.designer.cs">
+      <DependentUpon>Recursion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\2 Resource Injection\ResourceInjection.aspx.cs">
+      <DependentUpon>ResourceInjection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\2 Resource Injection\ResourceInjection.aspx.designer.cs">
+      <DependentUpon>ResourceInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\12 HTTP response splitting\ResponseSplitting.aspx.cs">
+      <DependentUpon>ResponseSplitting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\12 HTTP response splitting\ResponseSplitting.aspx.designer.cs">
+      <DependentUpon>ResponseSplitting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\4 Use of a Broken or Risky Cryptographic Algorithm\RiskyCryptographic.aspx.cs">
+      <DependentUpon>RiskyCryptographic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\4 Use of a Broken or Risky Cryptographic Algorithm\RiskyCryptographic.aspx.designer.cs">
+      <DependentUpon>RiskyCryptographic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\13 Sensitive Cookie in HTTPS Session Without Secure Attribute\SecureCookie.aspx.cs">
+      <DependentUpon>SecureCookie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\13 Sensitive Cookie in HTTPS Session Without Secure Attribute\SecureCookie.aspx.designer.cs">
+      <DependentUpon>SecureCookie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\14 Reliance on Untrusted Inputs in a Security Decisions\SecurityUntrustedInput.aspx.cs">
+      <DependentUpon>SecurityUntrustedInput.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\14 Reliance on Untrusted Inputs in a Security Decisions\SecurityUntrustedInput.aspx.designer.cs">
+      <DependentUpon>SecurityUntrustedInput.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\1 SQL Injection\Sqli.aspx.cs">
+      <DependentUpon>Sqli.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\1 SQL Injection\Sqli.aspx.designer.cs">
+      <DependentUpon>Sqli.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\4 OS Command Injection\OsCommand.aspx.cs">
+      <DependentUpon>OsCommand.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\4 OS Command Injection\OsCommand.aspx.designer.cs">
+      <DependentUpon>OsCommand.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\3 TIME AND STATUS\1 Time-of-check  Time-of-use %28TOCTOU%29 Race Condition\Tocttou.aspx.cs">
+      <DependentUpon>Tocttou.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\3 TIME AND STATUS\1 Time-of-check  Time-of-use %28TOCTOU%29 Race Condition\Tocttou.aspx.designer.cs">
+      <DependentUpon>Tocttou.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\11 Weak Password Requirements\WeakPassword.aspx.cs">
+      <DependentUpon>WeakPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\2 SECURITY FUNCTIONS\11 Weak Password Requirements\WeakPassword.aspx.designer.cs">
+      <DependentUpon>WeakPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\6 CODE ERROR\1 Exposure of Data Element to Wrong Session\WrongSession.aspx.cs">
+      <DependentUpon>WrongSession.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\6 CODE ERROR\1 Exposure of Data Element to Wrong Session\WrongSession.aspx.designer.cs">
+      <DependentUpon>WrongSession.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\8 XPath Injection\XPath.aspx.cs">
+      <DependentUpon>XPath.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\8 XPath Injection\XPath.aspx.designer.cs">
+      <DependentUpon>XPath.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\7 XQuery Injection\XQuery.aspx.cs">
+      <DependentUpon>XQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\7 XQuery Injection\XQuery.aspx.designer.cs">
+      <DependentUpon>XQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\3 Cross-site Scripting\Xss.aspx.cs">
+      <DependentUpon>Xss.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\1 INPUT DATA VERIFICATION\3 Cross-site Scripting\Xss.aspx.designer.cs">
+      <DependentUpon>Xss.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64149</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64148/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>C:\Windows\Microsoft.NET\Framework\v4.0.30319\aspnet_compiler.exe -v / -p "$(ProjectDir)\"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
