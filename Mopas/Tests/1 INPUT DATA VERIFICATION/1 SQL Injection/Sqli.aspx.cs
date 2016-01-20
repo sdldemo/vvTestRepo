@@ -25,7 +25,7 @@ namespace Mopas.Tests
                                 .ConnectionString))
                 using (var command = connection.CreateCommand())
                 {
-                    // TODO: FALSE
+                    // TODO: FP
                     // GET /Tests/1 INPUT DATA VERIFICATION/1 SQL Injection/Sqli.aspx?id=1%27+AND+%271%27%3d%272 HTTP/1.1
                     // Host:localhost
                     command.CommandText = string.Format("SELECT test FROM news where id={0}", id);
