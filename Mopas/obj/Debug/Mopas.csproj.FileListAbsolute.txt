@@ -6,6 +6,5 @@ C:\MOPAS_git\Mopas\bin\System.DirectoryServices.dll
 C:\MOPAS_git\Mopas\bin\System.dll
 C:\MOPAS_git\Mopas\bin\System.Web.dll
 C:\MOPAS_git\Mopas\bin\System.Xml.dll
-C:\MOPAS_git\Mopas\obj\Debug\Mopas.csprojResolveAssemblyReference.cache
 C:\MOPAS_git\Mopas\obj\Debug\Mopas.dll
 C:\MOPAS_git\Mopas\obj\Debug\Mopas.pdb
