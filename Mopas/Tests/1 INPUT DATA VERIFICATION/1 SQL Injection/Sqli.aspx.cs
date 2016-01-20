@@ -14,7 +14,7 @@ namespace Mopas.Tests
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string id = Request.Params["id"];
+            int id = Convert.ToInt32(Request.Params["id"]);
 
             int str1 = 0;
 
