@@ -4,12 +4,6 @@ using System.Data.SqlClient;
 namespace Mopas.Tests
 {
 
-    /// <summary>
-    /// 1.
-    /// SQL Injection
-    /// MOPAS
-    /// Contains 1 vulnerability
-    /// </summary>
     public partial class Sqli : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
