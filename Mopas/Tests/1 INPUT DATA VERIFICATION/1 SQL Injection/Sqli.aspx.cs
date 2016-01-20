@@ -15,7 +15,7 @@ namespace Mopas.Tests
             using (var connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
             using (var command = connection.CreateCommand())
             {
-                command.CommandText = "SELECT test FROM news where id=" + id;
+                command.CommandText = string.Format("SELECT test FROM news where id={0}", id);
                 connection.Open();
                 using (var reader = command.ExecuteReader())
                 {
