@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data.SqlClient;
 
 namespace Mopas.Tests
@@ -29,6 +29,10 @@ namespace Mopas.Tests
                     // GET /Tests/1 INPUT DATA VERIFICATION/1 SQL Injection/Sqli.aspx?id=1%27+AND+%271%27%3d%272 HTTP/1.1
                     // Host:localhost
                     // TODO: FP
+                    // GET /Tests/1 INPUT DATA VERIFICATION/1 SQL Injection/Sqli.aspx HTTP/1.1
+                    // Host:localhost
+                    // (System.Convert.ToInt32(this.Request.Params["id"]) == "1' AND '1'='2")
+                    // TODO: AI issue #1, High, SQL Injection, https://github.com/sdldemo/MOPAS/issues/1
                     // GET /Tests/1 INPUT DATA VERIFICATION/1 SQL Injection/Sqli.aspx HTTP/1.1
                     // Host:localhost
                     // (System.Convert.ToInt32(this.Request.Params["id"]) == "1' AND '1'='2")
