@@ -31,7 +31,7 @@ if (mysql_set_charset('utf8') === FALSE) {
 	die('Unable to set the character set');
 }
 
-$condition = $_POST['condition'];
+$condition = 'condition';
 
 $query = "SELECT * FROM items WHERE $condition";
 
