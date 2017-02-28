@@ -6,7 +6,8 @@
 define('DB_HOST', '');
 define('DB_PORT', 3306);
 define('DB_USER', '');
-define('DB_PASSWORD', '');
+// FIXED: AI issue #11, High, Hardcoded Password, https://github.com/sdldemo/vvTestRepo/issues/11
+
 define('DB_NAME', '');
 
 error_reporting(0);
