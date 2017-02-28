@@ -14,7 +14,7 @@ namespace Mopas.Tests
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string id = Request.Params["id"];
+            string id = "1";
 
             string str1 = "";
 
