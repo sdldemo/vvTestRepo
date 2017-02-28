@@ -31,11 +31,11 @@ if (mysql_set_charset('utf8') === FALSE) {
 	die('Unable to set the character set');
 }
 
-$condition = 'condition';
+$condition = $_POST['condition'];
 
 $query = "SELECT * FROM items WHERE $condition";
 
-// FIXED: AI issue #12, High, SQL Injection, https://github.com/sdldemo/vvTestRepo/issues/12
+// TODO: AI issue #, High, SQL Injection,
 //
 // POST /php/dir/sqli.php HTTP/1.1
 // Host: localhost
