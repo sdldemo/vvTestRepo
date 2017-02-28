@@ -35,7 +35,7 @@ $condition = 'condition';
 
 $query = "SELECT * FROM items WHERE $condition";
 
-// TODO: AI issue #12, High, SQL Injection, https://github.com/sdldemo/vvTestRepo/issues/12
+// FIXED: AI issue #12, High, SQL Injection, https://github.com/sdldemo/vvTestRepo/issues/12
 //
 // POST /php/dir/sqli.php HTTP/1.1
 // Host: localhost
