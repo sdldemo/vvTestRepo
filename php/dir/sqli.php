@@ -48,7 +48,7 @@ if ($numRows === FALSE || $numRows === 0) {
 }
 
 while($itemInfo = mysql_fetch_assoc($result)) {
-	// TODO: AI issue #9, High, Cross-site Scripting, https://github.com/sdldemo/vvTestRepo/issues/9
+	// TODO: AI issue #, High, Cross-site Scripting,
 	//
 	// POST /php/dir/sqli.php HTTP/1.1
 	// Host: localhost
@@ -66,7 +66,7 @@ while($itemInfo = mysql_fetch_assoc($result)) {
 	// (!(mysql_select_db('') === False))
 	// (!(mysql_set_charset('utf8') === False))
 	//
-	// TODO: AI issue #9, High, Cross-site Scripting, https://github.com/sdldemo/vvTestRepo/issues/9
+	// TODO: AI issue #, High, Cross-site Scripting,
 	//
 	// POST /php/dir/sqli.php HTTP/1.1
 	// Host: localhost
