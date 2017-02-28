@@ -2,7 +2,7 @@
 /**
  *  MOPAS Cross-site Scripting Example 1
  */
-// TODO: AI issue #, High, Cross-site Scripting,
+// FIXED: AI issue #, High, Cross-site Scripting,
 //
 // GET /php/xss.abc?a=%3Cscript%3Ealert%281%29%3C%2Fscript%3E HTTP/1.1
 // Host: localhost
