@@ -6,7 +6,8 @@
 define('DB_HOST', '');
 define('DB_PORT', 3306);
 define('DB_USER', '');
-define('DB_PASSWORD', '');
+// FIXED: AI issue #11, High, Hardcoded Password, https://github.com/sdldemo/vvTestRepo/issues/11
+
 define('DB_NAME', '');
 
 error_reporting(0);
@@ -35,6 +36,19 @@ $condition = $_POST['condition'];
 
 $query = "SELECT * FROM items WHERE $condition";
 
+// TODO: AI issue #, High, SQL Injection,
+//
+// POST /php/dir/sqli.php HTTP/1.1
+// Host: localhost
+// Accept-Encoding: identity
+// Connection: close
+// Content-Length: 22
+// Content-Type: application/x-www-form-urlencoded
+//
+// condition=sleep%285%29
+//
+// (!(mysql_select_db('') === False))
+// (!(mysql_set_charset('utf8') === False))
 $result = mysql_query($query);
 
 if ($result === FALSE) {
