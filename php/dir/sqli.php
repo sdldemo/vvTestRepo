@@ -84,6 +84,6 @@ while($itemInfo = mysql_fetch_assoc($result)) {
 	// (!(mysql_select_db('') === False))
 	// (!(mysql_set_charset('utf8') === False))
 	//
-	echo "owner: {$itemInfo['owner']}, item name: {$itemInfo['itemname']}\n";
+	//echo "owner: {$itemInfo['owner']}, item name: {$itemInfo['itemname']}\n";
 }
 ?>
