@@ -16,6 +16,6 @@ $domain = $_GET['domain'];
 // Connection: close
 //
 //
-system("nslookup $domain");
+system("nslookup domain");
 echo 'step12';
 ?>
