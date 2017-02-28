@@ -10,5 +10,5 @@
 // Connection: close
 //
 //
-echo $_GET['a'];
+echo 'a';
 ?>
