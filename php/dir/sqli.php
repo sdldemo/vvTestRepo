@@ -48,6 +48,42 @@ if ($numRows === FALSE || $numRows === 0) {
 }
 
 while($itemInfo = mysql_fetch_assoc($result)) {
+	// TODO: AI issue #27, High, Cross-site Scripting, https://github.com/sdldemo/vvTestRepo/issues/27
+	//
+	// POST /php/dir/sqli.php HTTP/1.1
+	// Host: localhost
+	// Accept-Encoding: identity
+	// Connection: close
+	// Content-Length: 22
+	// Content-Type: application/x-www-form-urlencoded
+	//
+	// condition=935137890000
+	//
+	// (mysql_fetch_assoc(mysql_query(('SELECT * FROM items WHERE ' . $_POST['condition'])))['owner'] == '<script>alert(1)</script>')
+	// (!(mysql_num_rows(mysql_query(('SELECT * FROM items WHERE ' . $_POST['condition']))) === 0))
+	// (!(mysql_num_rows(mysql_query(('SELECT * FROM items WHERE ' . $_POST['condition']))) === False))
+	// (!(mysql_query(('SELECT * FROM items WHERE ' . $_POST['condition'])) === False))
+	// (!(mysql_select_db('') === False))
+	// (!(mysql_set_charset('utf8') === False))
+	//
+	// TODO: AI issue #27, High, Cross-site Scripting, https://github.com/sdldemo/vvTestRepo/issues/27
+	//
+	// POST /php/dir/sqli.php HTTP/1.1
+	// Host: localhost
+	// Accept-Encoding: identity
+	// Connection: close
+	// Content-Length: 22
+	// Content-Type: application/x-www-form-urlencoded
+	//
+	// condition=935137890000
+	//
+	// (mysql_fetch_assoc(mysql_query(('SELECT * FROM items WHERE ' . $_POST['condition'])))['itemname'] == '<script>alert(1)</script>')
+	// (!(mysql_num_rows(mysql_query(('SELECT * FROM items WHERE ' . $_POST['condition']))) === 0))
+	// (!(mysql_num_rows(mysql_query(('SELECT * FROM items WHERE ' . $_POST['condition']))) === False))
+	// (!(mysql_query(('SELECT * FROM items WHERE ' . $_POST['condition'])) === False))
+	// (!(mysql_select_db('') === False))
+	// (!(mysql_set_charset('utf8') === False))
+	//
 	echo "owner: {$itemInfo['owner']}, item name: {$itemInfo['itemname']}\n";
 }
 ?>
