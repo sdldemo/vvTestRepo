@@ -35,6 +35,18 @@ import javax.servlet.http.HttpServletResponse;
 				resultSet = statement.executeQuery(query);
 
 				while (resultSet.next()) {
+					// TODO: AI issue #, High, Cross-site Scripting,
+					// GET /servlet HTTP/1.1
+					// Host: localhost
+					// Connection: close
+					//
+					// ((java.sql.DriverManager.getConnection("jdbc:mysql://localhost:3306/db?user=user&password=pass").createStatement().executeQuery("SELECT * FROM items WHERE '" + request.getParameter("condition") + "'").getString(1) == "<script>alert(1)</script>"))
+					// TODO: AI issue #, High, Cross-site Scripting,
+					// GET /servlet HTTP/1.1
+					// Host: localhost
+					// Connection: close
+					//
+					// ((java.sql.DriverManager.getConnection("jdbc:mysql://localhost:3306/db?user=user&password=pass").createStatement().executeQuery("SELECT * FROM items WHERE '" + request.getParameter("condition") + "'").getString(2) == "<script>alert(1)</script>"))
 					responseWriter.println("Owner: " + resultSet.getString(1) + ", item: " + resultSet.getString(2));
 				}
 			}
