@@ -32,6 +32,7 @@ public class sqli extends HttpServlet {
         try {
             Class.forName(driverName);
 
+            // TODO: AI issue #, High, 106,
             connection = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/db?user=user&password=pass"
             );
