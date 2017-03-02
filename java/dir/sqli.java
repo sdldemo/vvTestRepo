@@ -36,6 +36,11 @@ public class sqli extends HttpServlet {
                     "jdbc:mysql://localhost:3306/db?user=user&password=pass"
             );
             statement = connection.createStatement();
+            // TODO: AI issue #, High, SQL Injection,
+            // GET /sqli?condition=1%27+OR+sleep%285%29+%3D+%271 HTTP/1.1
+            // Host: localhost
+            // Connection: close
+            //
             resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
